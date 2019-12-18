@@ -1,4 +1,4 @@
 module.exports = {
-  'primary-color': '#1DA57A',
+  'primary-color': '#01a8d4',
   'border-radius-base': '2px',
 };

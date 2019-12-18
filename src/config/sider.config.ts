@@ -26,6 +26,11 @@ export const adminSiderConfig:SiderInterFaceConfig[] = [
                 title:'个人中心',
                 path:'/backstate/personal'
             },
+            {
+              id:'backstate-mytesk',
+              title:'我的任务',
+              path:'/backstate/mytesk'
+          },
         ]
     },
     {
@@ -107,6 +112,52 @@ export const adminSiderConfig:SiderInterFaceConfig[] = [
           },
         ]
     },
+    {
+        id: 'partment',
+        root: '部门',
+        icon: 'apartment',
+        children: [
+          {
+            id: 'partment-manager',
+            title: '部门管理',
+            path: '/partment/manager'
+          },
+        ]
+    },
+    {
+        id: 'material',
+        root: '素材',
+        icon: 'file-image',
+        children: [
+          {
+            id: 'material-manager',
+            title: '素材管理',
+            path: '/material/manager'
+          },
+        ]
+    },
+    {
+      id: 'sensitive',
+      root: '敏感信息',
+      icon: 'eye-invisible',
+      children: [
+        {
+          id: 'sensitive-words',
+          title: '文字敏感信息',
+          path: '/sensitive/words'
+        },
+        {
+          id: 'sensitive-imgs',
+          title: '图片敏感信息',
+          path: '/sensitive/imgs'
+        },
+        {
+          id: 'sensitive-count',
+          title: '敏感信息统计',
+          path: '/sensitive/count'
+        },
+      ]
+  },
     {
         id: 'rightsManager',
         root: '权限管理',

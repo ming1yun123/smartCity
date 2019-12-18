@@ -8,7 +8,7 @@ import {RouteConfig} from 'react-router-config'
         component:lazy(()=>import('../pages/backstate/backstate-home')),
         exact:true,
         breadcrumb:[
-            {title:'旅行报社'},
+            {title:'智慧报社'},
             {title:'首页'},
         ]
     },
@@ -16,7 +16,7 @@ import {RouteConfig} from 'react-router-config'
         path:'/backstate/home',
         component:lazy(()=>import('../pages/backstate/backstate-home')),
         breadcrumb:[
-            {title:'旅行报社'},
+            {title:'智慧报社'},
             {title:'首页'},
         ]
     },
@@ -24,8 +24,16 @@ import {RouteConfig} from 'react-router-config'
         path:'/backstate/personal',
         component:lazy(()=>import('../pages/backstate/backstate-personal')),
         breadcrumb:[
-            {title:'旅行报社'},
+            {title:'智慧报社'},
             {title:'个人中心'},
+        ]
+    },
+    {
+        path:'/backstate/mytesk',
+        component:lazy(()=>import('../pages/backstate/backstate-mytesk')),
+        breadcrumb:[
+            {title:'智慧报社'},
+            {title:'我的任务'},
         ]
     },
     {
@@ -115,6 +123,46 @@ import {RouteConfig} from 'react-router-config'
             {title:'评论分析'},
         ]
     },   
+    {
+        path:'/partment/manager',
+        component:lazy(()=>import('../pages/partment/partment-manager')),
+        breadcrumb:[
+            {title:'部门'},
+            {title:'部门管理'},
+        ]
+    },  
+    {
+        path:'/material/manager',
+        component:lazy(()=>import('../pages/material/material-manager')),
+        breadcrumb:[
+            {title:'素材'},
+            {title:'素材管理'},
+        ]
+    }, 
+    {
+        path:'/sensitive/words',
+        component:lazy(()=>import('../pages/sensitive/sensitive-words')),
+        breadcrumb:[
+            {title:'敏感信息'},
+            {title:'文字敏感信息'},
+        ]
+    }, 
+    {
+        path:'/sensitive/imgs',
+        component:lazy(()=>import('../pages/sensitive/sensitive-imgs')),
+        breadcrumb:[
+            {title:'敏感信息'},
+            {title:'图片敏感信息'},
+        ]
+    }, 
+    {
+        path:'/sensitive/count',
+        component:lazy(()=>import('../pages/sensitive/sensitive-count')),
+        breadcrumb:[
+            {title:'敏感信息'},
+            {title:'敏感信息统计'},
+        ]
+    }, 
     {
         path:'/rightsManager/addRole',
         component:lazy(()=>import('../pages/rightsManager/rightsManager-addRole')),

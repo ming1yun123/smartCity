@@ -5,7 +5,7 @@ const initialState = Map({
     locale:'zhCN',
     isLogin:true,
     userInfo:Map({
-        role:'checker'
+        role:'admin'
     })
 });
 

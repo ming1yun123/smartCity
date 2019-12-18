@@ -32,6 +32,7 @@ const AppHeader:React.FC<{}> = function AppHeader(){
         <Header className="app-header">
         <div className="logo">
           <img src={Logo} alt=""/>
+          <p>智慧报社后台管理系统</p>
         </div>
         <Menu
           className="menu"

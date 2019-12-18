@@ -3,17 +3,27 @@
     justify-content: space-between;
     .logo{
         height: 100%;
-        display: inline-block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         img{
-            height: 80%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        p{
+            color: white;
+            font-size: 18px;
+            position: relative;
+            top: 9px;
+            left: 20px;
         }
     }
     .memu{
+        height: 100%;
         display: flex;
         justify-content: flex-end;
         .userImg{
             
-           
         }
         .title{
             padding-left: 30px;
