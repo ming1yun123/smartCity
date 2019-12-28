@@ -1,6 +1,6 @@
 enum API{
 
-    LOGIN_API =  '/manager/api/login',
+    LOGIN_API =  '/api/user/login',
 
 
 
