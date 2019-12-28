@@ -2,92 +2,47 @@ import immutable from 'immutable'
 import API from '../../ajax/api'
 import ajax from '../../ajax'
 import {Dispatch } from 'redux'
-
 //////reducer 实例 /。////////////  每个闭环一个reducer 已被引入store 合并
-enum SetAnalysisUserDataType {
-    load = 'set_analysis_user_load',
-    success = 'set_analysis_user_success',
-    fail = 'set_analysis_user_fail',
+enum roleDataType {
+    load = 'set_userr_data_load',
+    success = 'set_user_data_success',
+    fail = 'set_user_data_fail',
 }
-
-//同步请求
-const setAnalysisUserStoreData = (type:SetAnalysisUserDataType,date:string,value?:any)=>({
+const loadRoleData = (type:roleDataType,obj?:Object)=>({
     type,
-    date,
-    value
+    obj
 });
-
-
-type Action  =  ReturnType<typeof setAnalysisUserStoreData>;
-
-export const requestAnalysisUserData = (value?:number)=>(dispatch:Dispatch)=>{
-    const valStr = value ? value.toString() : '';
-
-    const action = setAnalysisUserStoreData(SetAnalysisUserDataType.load,valStr)
-    dispatch(action);
-
-    ajax.get(API.ANALYSIS_USER_SELECT_DATA,{
-        params:{
-            count:value
-        }
-    })
+type Action =  ReturnType<typeof loadRoleData>
+export const requestRoleData = (value?:number)=>(dispatch:Dispatch)=>{
+    dispatch(loadRoleData(roleDataType.load))
+    ajax.get(API.USER_FINDUSER)
     .then(({data})=>{
-        const action = setAnalysisUserStoreData(SetAnalysisUserDataType.success,valStr,data.data)
-        dispatch(action);
-        console.log(data);
-        
-        // console.log('成功了');
+        console.log(data.data);
+        dispatch(loadRoleData(roleDataType.success,data.data))
     })
     .catch(error=>{
-        const action = setAnalysisUserStoreData(SetAnalysisUserDataType.fail,valStr)
-        dispatch(action);
+        dispatch(loadRoleData(roleDataType.fail))
+        console.log(error)
     })
 }
-
-
-const initialState = {
-    user:{
-        '-1':{
-            data:null,
-            status:'waiting'
-        },
-        '7':{
-            data:null,
-            status:'waiting'
-        },
-        '15':{
-            data:null,
-            status:'waiting'
-        },
-        '30':{
-            data:null,
-            status:'waiting'
-        },
-        '180':{
-            data:null,
-            status:'waiting'
-        },
-        '360':{
-            data:null,
-            status:'waiting'
-        },
-        
-    }
+const initialState={
+    'loadingStatues':'wait',
+    'roleList':Array
 }
-
-const immutableState  = immutable.fromJS(initialState);
-
-
-export default (state = immutableState,action: Action )=>{
+const immutableState = immutable.fromJS(initialState)
+export default (state = immutableState,action:Action)=>{
     switch (action.type) {
-        case SetAnalysisUserDataType.load:
-        return state.setIn(['user',action.date,'status'],'loading');
-    case SetAnalysisUserDataType.success:
-        const newState = state.setIn(['user',action.date,'status'],'success')
-        return newState.setIn(['user',action.date,'data'],immutable.fromJS(action.value));
-    case SetAnalysisUserDataType.fail:
-        return state.setIn(['user',action.date,'status'],'fail');
-    default:
-        return state;
+        case roleDataType.load:
+            return state.setIn(['loadingStatues'],'loading')
+        case roleDataType.success:
+            const newState = state.setIn(['loadingStatues'],'success')
+            console.log(newState);
+            
+            return newState.setIn(['roleList'],immutable.fromJS(action.obj))
+        case roleDataType.fail:
+            return state.setIn(['loadingStatues'],'fail')
+          
+            default:
+           return state;
     }
 }

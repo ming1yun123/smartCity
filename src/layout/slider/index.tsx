@@ -13,7 +13,7 @@ const AppSlider:React.FC<{role:string}> = function AppSlider(role){
   // console.log( useRouteInfo());
   const {ids} = useRouteInfo();
   const history = useHistory();
-  console.log(role);
+  // console.log(role);
   
   const SiderConfig = useMemo(()=>{
     if((role.role)==="admin"){
@@ -26,7 +26,7 @@ const AppSlider:React.FC<{role:string}> = function AppSlider(role){
   const itemClickAciton = useCallback((path:string)=>{
     history.push(path);
   },[history])
-    console.log([ids[0]],[ids[1]]);
+    // console.log([ids[0]],[ids[1]]);
     
     return(
       <Sider width={200} style={{ background: '#fff',fontSize:'16px!important'  }}>

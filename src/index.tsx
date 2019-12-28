@@ -6,10 +6,14 @@ import './style/reset.scss'
 import './style/style.scss'
 import {Provider} from 'react-redux'
 import store from './store'
+import zhCN from 'antd/es/locale-provider/zh_CN';
+import {  ConfigProvider } from 'antd';
 ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>
+    <ConfigProvider locale={zhCN}>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </ConfigProvider>
 , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

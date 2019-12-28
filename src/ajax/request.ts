@@ -16,12 +16,13 @@ class HtttpRequest{
         const newConfig = this.mergeConfig(configs,{url,method:'GET'});
         return this.request(newConfig);
     }
+
     public post(url:string,data:any={},configs:AxiosRequestConfig={}):AxiosPromise{
-        const newConfig = this.mergeConfig(configs,{url,method:'POST'});
+        const newConfig = this.mergeConfig(configs,{url,method:'POST',data});
         return this.request(newConfig);
     }
-
-
+    
+    
     public request(configs:AxiosRequestConfig):AxiosPromise{
         const instance:AxiosInstance = axios.create();
         this.interceptor(instance);

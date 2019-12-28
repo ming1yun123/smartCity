@@ -25,7 +25,6 @@ export default  function useRouteInfo(){
         return ids;
     },[path]);
 
-
     return {
         breadcrumb:breadcrumb as ItemInterface[],
         ids:ids,

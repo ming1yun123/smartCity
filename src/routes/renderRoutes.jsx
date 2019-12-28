@@ -17,6 +17,7 @@ function renderRoutes(routes, role, permission, extraProps = {}, switchProps = {
               render={props =>{
 
                 //鉴权
+                
                 if(!checkPermission(role, permission, route)){
                   return <Redirect to="/forbidden"/>
                 }

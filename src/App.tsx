@@ -9,9 +9,9 @@ import Loding from './pages/common/loading'
 import Header from './layout/header';
 import Sider from './layout/slider';
 import Breadcrumb from './layout/breadcrumb';
-import { Switch, Route, Redirect } from "react-router";
+import {Switch, Route, Redirect } from "react-router";
 
-const {  Content } = Layout;
+const {Content } = Layout;
 
 const App: React.FC<{}> = function App(){
   const isLogin = useSelector(state=>(state as any).get('root').get('isLogin'));

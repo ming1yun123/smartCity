@@ -174,13 +174,14 @@ import {RouteConfig} from 'react-router-config'
     {
         path:'/rightsManager/addRights',
         component:lazy(()=>import('../pages/rightsManager/rightsManager-addRights')),
+        exact:true,
         breadcrumb:[
             {title:'权限管理'},
             {title:'权限添加'},
         ]
     },  
     {
-        path:'/rightsManager/edit/addRights',
+        path:'/rightsManager/addRights/edit/:id',
         component:lazy(()=>import('../pages/rightsManager/rightsManager-addRight-page')),
         breadcrumb:[
             {title:'权限管理'},

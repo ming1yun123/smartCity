@@ -3,7 +3,7 @@ import immutable ,{List} from 'immutable'
 enum SetPermission{
     set= 'set_permission'
 }
-
+//List<string>//list String 泛型
 export const setPermission = (value:List<string>)=>({
     type:SetPermission.set,
     value,
