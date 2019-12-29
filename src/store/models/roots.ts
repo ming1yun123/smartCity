@@ -20,18 +20,16 @@ type Action = ReturnType<typeof loginAction>
 // 发送登录的事件
 export const requestLogin = (username:string,password:string)=>(dispatch:Dispatch)=>{
     dispatch(loginAction(LoginType.load))
-    console.log('1');
-    
     ajax.post(API.LOGIN_API,{
         username:username,
         password:password
     })
     .then(result=>{
-        console.log(loginAction(LoginType.success,result.data.data));
-        
+        console.log(1);
         dispatch(loginAction(LoginType.success,result.data.data));
     })
     .catch(error=>{
+        console.log(error);
         dispatch(loginAction(LoginType.fail));
     })
 }
@@ -39,9 +37,14 @@ export const requestLogin = (username:string,password:string)=>(dispatch:Dispatc
 
 const initialState = {
     locale:'zhCN',
-    isLogin:false,
+    isLogin:true,
     status:'waiting',
-    userInfo:{}
+    userInfo:{
+        password:'',
+        power:[],
+        role:'admin',
+        username:''
+    }
 }
 
 export default (state = immutable.fromJS(initialState), action:Action)=>{
@@ -49,8 +52,7 @@ export default (state = immutable.fromJS(initialState), action:Action)=>{
         case LoginType.load:
             return state.setIn(['status'],'loading')
         case LoginType.success:
-            console.log(action.value);
-            const  newState =  state.setIn(['status'],'success')
+            const  newState = state.setIn(['isLogin'],true).setIn(['status'],'success')
             return newState.setIn(['userInfo'],immutable.fromJS(action.value))
         case LoginType.fail:
             return state.setIn(['status'],'fail')

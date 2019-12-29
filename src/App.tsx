@@ -1,4 +1,4 @@
-import React,{Suspense} from  'react';
+import React,{Suspense,useEffect} from  'react';
 import { Layout } from 'antd';
 import {BrowserRouter} from 'react-router-dom'
 import renderRoutes from './routes/renderRoutes'
@@ -15,7 +15,12 @@ const {  Content } = Layout;
 
 const App: React.FC<{}> = function App(){
   const isLogin = useSelector(state=>(state as any).get('root').get('isLogin'));
-  const role = useSelector(state=>(state as any).get('root').get('userInfo').get('role'));
+  // const role = useSelector(state=>(state as any).get('root').get('userInfo').get('role'));
+
+  useEffect(()=>{
+    // const isLogins = isLogin;
+    console.log(isLogin);
+  },[isLogin])
     
   return (
     <BrowserRouter>

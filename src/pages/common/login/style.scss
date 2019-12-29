@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
-* {
-  box-sizing: border-box;
-}
-
-html, 
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
 
 body {
   font-family: 'Lato', sans-serif;
@@ -26,7 +16,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background: linear-gradient(243.87deg, #F28FE5 30.6%, #371933 130.6%);
-  overflow: hidden;
 }
 
 input {

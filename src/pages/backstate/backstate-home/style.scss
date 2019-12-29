@@ -1,0 +1,77 @@
+.all{
+    width: 100%;
+}
+.backstateHome{
+    background: #e0f0fa;
+    height: 250px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    .clue{
+        height: 180px;
+        width: 600px;
+        border: 1px solid #c9c9c9;
+        // overflow: hidden;
+        box-shadow: 5px 5px 5px #a7a6a6;
+        .up{
+            height: 50px;
+            width: 100%;
+            border-bottom: 1px solid #cccccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0 20px;
+            span{
+                font-size: 17px;
+                font-weight: 800;
+                color: #000000;
+                em{
+                    color: #f77a26;
+                }
+            }
+        }
+        .down{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 130px;
+            div{
+                align-items: center;
+                h1{
+                    font-size: 17px;
+                    font-weight: 800;
+                    color: #000000;
+                }
+                span{
+                    display: inline-block;
+                    text-align: center;
+                    width: 100%;
+                    color: #f77a26;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    
+}
+.tubiao{
+    display: flex;
+    justify-content: center;
+    .echart1{
+        width: 500px;
+        height:400px;
+        // background: #a7a6a6;
+    }
+}
+.tubiao2{
+    display: flex;
+    justify-content: center;
+    .echart2{
+        width: 500px;
+        height:400px;
+        background: #a7a6a6;
+    }
+}

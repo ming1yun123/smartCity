@@ -7,7 +7,7 @@ function renderRoutes(routes, role, permission, extraProps = {}, switchProps = {
 
 
   return routes ? (
-    <Switch {...switchProps}>
+    <Switch {...switchProps}> 
       {routes.map((route, i) =>(
             <Route
               key={route.key || i}

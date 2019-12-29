@@ -1,6 +1,7 @@
-import React,{useCallback,useRef, useState} from 'react'
+import React,{useCallback,useRef, useState,useEffect} from 'react'
 import { message, Button } from 'antd';
 import {useDispatch,useSelector} from 'react-redux'
+import {useHistory} from 'react-router'
 import {requestLogin} from '../../../store/models/roots';
 import './style.scss'
 
@@ -17,6 +18,7 @@ const IsLogin :React.FC<{}>=function IsLogin(){
     const [password,setpassword] = useState('')
 
     const dispatch = useDispatch();
+    const history = useHistory();
     
     
 
@@ -49,17 +51,23 @@ const IsLogin :React.FC<{}>=function IsLogin(){
         // 请求服务器
         dispatch(requestLogin(username,password))
 
-        
-
-        setTimeout(()=>{
-            console.log(state.toJS());
-        },2000)
-
-
     },[username,password])
 
+    // 判断是否登录成功
+    useEffect(()=>{
+        const data = state.toJS();
+        console.log(data);
+        
+        if(state.toJS().status === 'success'){
+            message.info('登录成功');
+            history.push('/backstate/home')
 
-
+            return;
+        }else if(state.toJS().status === 'fail'){
+            message.info('账号或密码错误');
+            return;
+        }
+    },[state])
     
     return(
         <div className="login-wrapper" ref={loginRef}>
