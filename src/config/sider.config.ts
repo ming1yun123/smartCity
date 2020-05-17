@@ -38,21 +38,22 @@ export const adminSiderConfig:SiderInterFaceConfig[] = [
         root:'新闻',
         icon: 'picture',
         children:[
-            {
-                id:'news-edit',
-                title:'文章编辑',
-                path:'/news/edit'
-            },
-            {
-                id:'news-check',
-                title:'文章审核',
-                path:'/news/check'
-            },
-            {
+              {
                 id:'news-list',
                 title:'文章列表',
                 path:'/news/list'
             },
+            {
+                id:'news-edit',
+                title:'文章编辑与评论',
+                path:'/news/edit'
+            },
+            {
+                id:'news-check',
+                title:'文章发布',
+                path:'/news/check'
+            },
+            
             {
                 id:'news-draft',
                 title:'草稿箱',

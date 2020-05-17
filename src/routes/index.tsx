@@ -4,7 +4,7 @@ import {RouteConfig} from 'react-router-config'
 
  const routes  :RouteConfig[]=[
     {
-        path:'/',
+        path:'/backstate/home',
         component:lazy(()=>import('../pages/backstate/backstate-home')),
         exact:true,
         breadcrumb:[
@@ -22,7 +22,7 @@ import {RouteConfig} from 'react-router-config'
     },
     {
         path:'/backstate/personal',
-        component:lazy(()=>import('../pages/backstate/backstate-personal')),
+        component:lazy(()=>import('../pages/backstate/backstate-personal/index.jsx')),
         breadcrumb:[
             {title:'智慧报社'},
             {title:'个人中心'},
@@ -30,7 +30,7 @@ import {RouteConfig} from 'react-router-config'
     },
     {
         path:'/backstate/mytesk',
-        component:lazy(()=>import('../pages/backstate/backstate-mytesk')),
+        component:lazy(()=>import('../pages/backstate/backstate-mytesk/index.jsx')),
         breadcrumb:[
             {title:'智慧报社'},
             {title:'我的任务'},
@@ -38,7 +38,7 @@ import {RouteConfig} from 'react-router-config'
     },
     {
         path:'/news/edit',
-        component:lazy(()=>import('../pages/news/news-edit')),
+        component:lazy(()=>import('../pages/news/news-edit/index.jsx')),
         breadcrumb:[
             {title:'新闻'},
             {title:'文章编辑'},
@@ -46,22 +46,22 @@ import {RouteConfig} from 'react-router-config'
     },
     {
         path:'/news/check',
-        component:lazy(()=>import('../pages/news/news-check')),
+        component:lazy(()=>import('../pages/news/news-check/index.jsx')),
         breadcrumb:[
             {title:'新闻'},
-            {title:'文章审核'},
+            {title:'文章发布'},
         ]
     },
     {
         path:'/news/list',
-        component:lazy(()=>import('../pages/news/news-list')),
+        component:lazy(()=>import('../pages/news/news-list/index.jsx')),
         breadcrumb:[
             {title:'新闻'},
             {title:'文章列表'},
         ]
     },    {
         path:'/news/draft',
-        component:lazy(()=>import('../pages/news/news-draft')),
+        component:lazy(()=>import('../pages/news/news-draft/index.jsx')),
         breadcrumb:[
             {title:'新闻'},
             {title:'草稿箱'},
@@ -193,8 +193,8 @@ import {RouteConfig} from 'react-router-config'
         component:lazy(()=>import('../pages/common/error')),
     },
     {
-        path:'/islogin',
-        component:lazy(()=>import('../pages/common/login')),
+        path:'/',
+        component:lazy(()=>import('../pages/common/login/index.jsx')),
     },
     {
         path:'/forbidden',

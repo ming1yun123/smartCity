@@ -9,7 +9,7 @@ const AppHeader:React.FC<{}> = function AppHeader(){
     let history = useHistory();
     const [visible, setvisible] = useState(false);
     const ToUserCenterAction = useCallback(()=>{
-      history.push('/');
+      history.push('/backstate/personal');
     },[])
 
     const showModal =  useCallback(() => {
@@ -19,7 +19,7 @@ const AppHeader:React.FC<{}> = function AppHeader(){
 
     
     const handleOk = useCallback((e)=>{
-      console.log(e);
+      history.push('/')
       setvisible(false)
     },[]);
 
